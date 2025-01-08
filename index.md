@@ -7,7 +7,7 @@ title: My GitHub Repositories
 
 # GitHub Repositories
 
-Please find below my portfolio of my projects. Your feedback is highly appreciated.
+Your feedback is highly appreciated.
 
 ## Python
 
