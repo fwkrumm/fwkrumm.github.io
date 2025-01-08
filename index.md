@@ -1,7 +1,9 @@
 ---
 layout: default
-title: GitHub Repositories
+title: My GitHub Repositories
 ---
+
+<meta name="google-site-verification" content="28q6TptZTCtkfN-eohtPd1h-hETr9e9ZHgZwOkTmlio" />
 
 # GitHub Repositories
 
