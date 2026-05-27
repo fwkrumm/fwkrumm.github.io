@@ -12,9 +12,9 @@
     body {
       font-family: 'Inter', 'Segoe UI', sans-serif;
       font-weight: 300;
-      color: #e8f0fe;
+      color: #f0e0f0;
       min-height: 100vh;
-      background: radial-gradient(ellipse at 20% 10%, #1a2a6c 0%, #0d1b3e 40%, #050c1f 100%);
+      background: radial-gradient(ellipse at 20% 10%, #2a0a1e 0%, #120008 40%, #050005 100%);
       background-attachment: fixed;
     }
 
@@ -24,9 +24,9 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 15% 85%, rgba(100, 160, 255, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 15%, rgba(160, 100, 255, 0.07) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(50, 120, 255, 0.04) 0%, transparent 60%);
+        radial-gradient(circle at 15% 85%, rgba(220, 0, 120, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(180, 0, 160, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(140, 0, 80, 0.04) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -57,23 +57,24 @@
       padding: 36px 40px 28px;
       margin-bottom: 28px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(180, 0, 80, 0.07);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 60, 160, 0.2);
       border-radius: 20px;
       box-shadow:
         0 12px 48px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25),
-        0 0 60px rgba(80, 140, 255, 0.08);
+        inset 0 1px 0 rgba(255, 100, 180, 0.2),
+        0 0 60px rgba(200, 0, 100, 0.08);
     }
 
     header h1 {
+      display: block;
       font-size: 2rem;
       font-weight: 600;
       letter-spacing: -0.5px;
       color: #ffffff;
-      text-shadow: 0 0 30px rgba(120, 180, 255, 0.6), 0 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 0 0 30px rgba(255, 60, 160, 0.7), 0 2px 4px rgba(0,0,0,0.5);
     }
 
     /* ── Content ── */
@@ -89,10 +90,10 @@
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(120, 180, 255, 0.85);
+      color: rgba(255, 100, 180, 0.9);
       margin: 32px 0 14px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(120, 180, 255, 0.2);
+      border-bottom: 1px solid rgba(220, 0, 120, 0.25);
     }
 
     h2:first-child { margin-top: 0; }
@@ -122,10 +123,10 @@
     }
 
     li:hover {
-      background: rgba(100, 160, 255, 0.09);
-      border-color: rgba(100, 160, 255, 0.3);
+      background: rgba(200, 0, 100, 0.09);
+      border-color: rgba(220, 60, 140, 0.35);
       transform: translateX(3px);
-      box-shadow: 0 4px 20px rgba(80, 140, 255, 0.12);
+      box-shadow: 0 4px 20px rgba(180, 0, 90, 0.18);
     }
 
     li strong, li > a:first-child {
@@ -135,14 +136,14 @@
 
     /* ── Links ── */
     a {
-      color: #7eb8f7;
+      color: #e060b0;
       text-decoration: none;
       transition: color 0.15s ease, text-shadow 0.15s ease;
     }
 
     a:hover {
-      color: #b8d8ff;
-      text-shadow: 0 0 12px rgba(120, 180, 255, 0.5);
+      color: #ff9fda;
+      text-shadow: 0 0 12px rgba(220, 60, 150, 0.55);
     }
 
     /* Link after repo name = description text */
@@ -161,13 +162,13 @@
     li a:first-child {
       font-size: 0.95rem;
       font-weight: 600;
-      color: #90c8ff;
+      color: #f070c0;
       display: block;
       margin-bottom: 3px;
     }
 
     li a:first-child:hover {
-      color: #c4e0ff;
+      color: #ffaae0;
     }
 
     /* ── Footer ── */
@@ -185,7 +186,7 @@
       content: '';
       display: block;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(160, 210, 255, 0.5), rgba(200, 170, 255, 0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 80, 160, 0.6), rgba(200, 0, 120, 0.5), transparent);
       margin-top: 28px;
       border-radius: 1px;
     }
