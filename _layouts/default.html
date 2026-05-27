@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&family=Inter:wght@300;400;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      font-weight: 300;
+      color: #e8f0fe;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 20% 10%, #1a2a6c 0%, #0d1b3e 40%, #050c1f 100%);
+      background-attachment: fixed;
+    }
+
+    /* Aero background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 85%, rgba(100, 160, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(160, 100, 255, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(50, 120, 255, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Glass card ── */
+    .glass {
+      background: rgba(255, 255, 255, 0.045);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 36px 40px 28px;
+      margin-bottom: 28px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow:
+        0 12px 48px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        0 0 60px rgba(80, 140, 255, 0.08);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      text-shadow: 0 0 30px rgba(120, 180, 255, 0.6), 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    /* ── Content ── */
+    .content {
+      padding: 36px 40px;
+    }
+
+    /* ── Typography ── */
+    h1 { display: none; } /* title shown in header */
+
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(120, 180, 255, 0.85);
+      margin: 32px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(120, 180, 255, 0.2);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    p {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: rgba(220, 235, 255, 0.75);
+      margin-bottom: 16px;
+    }
+
+    /* ── Project list ── */
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 10px;
+      padding: 14px 18px;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    li:hover {
+      background: rgba(100, 160, 255, 0.09);
+      border-color: rgba(100, 160, 255, 0.3);
+      transform: translateX(3px);
+      box-shadow: 0 4px 20px rgba(80, 140, 255, 0.12);
+    }
+
+    li strong, li > a:first-child {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* ── Links ── */
+    a {
+      color: #7eb8f7;
+      text-decoration: none;
+      transition: color 0.15s ease, text-shadow 0.15s ease;
+    }
+
+    a:hover {
+      color: #b8d8ff;
+      text-shadow: 0 0 12px rgba(120, 180, 255, 0.5);
+    }
+
+    /* Link after repo name = description text */
+    li a + text, li a ~ * {
+      color: rgba(200, 220, 255, 0.65);
+      font-size: 0.88rem;
+    }
+
+    /* text nodes following the first link in li */
+    li {
+      font-size: 0.88rem;
+      color: rgba(200, 220, 255, 0.65);
+      line-height: 1.55;
+    }
+
+    li a:first-child {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #90c8ff;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    li a:first-child:hover {
+      color: #c4e0ff;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 36px;
+      padding: 18px 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(180, 200, 255, 0.35);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    /* ── Aero glow line at top of header ── */
+    header::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(160, 210, 255, 0.5), rgba(200, 170, 255, 0.4), transparent);
+      margin-top: 28px;
+      border-radius: 1px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 24px 20px 20px; }
+      header h1 { font-size: 1.4rem; }
+      .content { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>{{ page.title | default: site.title }}</h1>
+    </header>
+    <div class="glass content">
+      {{ content }}
+    </div>
+    <footer>fwkrumm &bull; GitHub Pages</footer>
+  </div>
+</body>
+</html>
