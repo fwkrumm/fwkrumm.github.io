@@ -14,11 +14,12 @@ Your feedback is highly appreciated.
 - [shmlock](https://github.com/fwkrumm/shmlock)
 An inter-process lock implementation (named Semaphore) that eliminates the need for passing objects around. It can be utilized across multiple terminals or consoles using the same name identifier, leveraging the multiprocessing.shared_memory module.
 
+- [shmqueue](https://github.com/fwkrumm/shmqueue)
+An inter-process FIFO queue backed by a shared-memory ring buffer. Any process can attach by name — no object passing required. Uses shmlock for synchronization and msgpack for serialization, with an optional pickle fallback.
+
 - [pymembar](https://github.com/fwkrumm/pymembar)
 A Python library (basically a simple C-wrapper) for memory barriers and synchronization primitives, providing efficient and portable solutions for concurrent programming.
 
-- [shmqueue](https://github.com/fwkrumm/shmqueue)
-An inter-process FIFO queue backed by a shared-memory ring buffer. Any process can attach by name — no object passing required. Uses shmlock for synchronization and msgpack for serialization, with an optional pickle fallback.
 
 ## C++
 
