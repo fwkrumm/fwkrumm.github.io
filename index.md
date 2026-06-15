@@ -1,6 +1,6 @@
 ---
 layout: default
-title: My GitHub Repositories
+title: Project Overview
 ---
 
 <meta name="google-site-verification" content="28q6TptZTCtkfN-eohtPd1h-hETr9e9ZHgZwOkTmlio" />
@@ -20,8 +20,19 @@ An inter-process FIFO queue backed by a shared-memory ring buffer. Any process c
 - [pymembar](https://github.com/fwkrumm/pymembar)
 A Python library (basically a simple C-wrapper) for memory barriers and synchronization primitives, providing efficient and portable solutions for concurrent programming.
 
+WORK IN PROGRESS:
+
+- [grpchook](https://github.com/fwkrumm/grpchook)
+WIP. This package provides a Python framework for building asynchronous gRPC bidirectional-streaming services. Subclass `BaseServer` and `BaseClient`, override the hooks you need — the framework handles all gRPC plumbing.
 
 ## C++
 
 - [5p](https://github.com/fwkrumm/5p)
 A straightforward wrapper for the pcapplusplus library, designed to forward pcap data from pcap(ng) files via UDP/TCP using Boost sockets. This repository employs the conan2 package manager for dependency management.
+
+## Godot 4
+
+WORK IN PROGRESS:
+
+- [Doppelkopf](https://github.com/fwkrumm/doppelkopf)
+WIP. This repository contains an experimental AI project for generating a Doppelkopf game with Godot4. This is not production‑ready and is only updated when I have spare compute tokens. You’re welcome to use, modify, or extend it in accordance with the project’s license.
