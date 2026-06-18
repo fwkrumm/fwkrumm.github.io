@@ -20,10 +20,8 @@ An inter-process FIFO queue backed by a shared-memory ring buffer. Any process c
 - [pymembar](https://github.com/fwkrumm/pymembar)
 A Python library (basically a simple C-wrapper) for memory barriers and synchronization primitives, providing efficient and portable solutions for concurrent programming.
 
-WORK IN PROGRESS:
-
 - [grpchook](https://github.com/fwkrumm/grpchook)
-WIP. This package provides a Python framework for building asynchronous gRPC bidirectional-streaming services. Subclass `BaseServer` and `BaseClient`, override the hooks you need — the framework handles all gRPC plumbing.
+This package provides a Python framework for building asynchronous gRPC bidirectional-streaming services. Subclass `BaseServer` and `BaseClient`, override the hooks you need — the framework handles all gRPC plumbing.
 
 ## C++
 
