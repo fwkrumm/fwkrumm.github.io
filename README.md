@@ -16,6 +16,12 @@ A Python library (basically a simple C-wrapper) for memory barriers and synchron
 - [grpchook](https://github.com/fwkrumm/grpchook)
 This package provides a Python framework for building asynchronous gRPC bidirectional-streaming services. Subclass `BaseServer` and `BaseClient`, override the hooks you need — the framework handles all gRPC plumbing.
 
+- [multi_scale_turing](https://github.com/fwkrumm/multi_scale_turing) (AI GENERATED)
+Multi-scale Turing pattern generator in Python; CPU/CUDA, configurable scales, symmetry, frame export.
+
+- [image_upscaler](https://github.com/fwkrumm/image_upscaler) (AI GENERATED)
+Standalone image upscaler using Real-ESRGAN.
+
 ## C++
 
 - [5p](https://github.com/fwkrumm/5p)
@@ -23,7 +29,5 @@ A straightforward wrapper for the pcapplusplus library, designed to forward pcap
 
 ## GDScript
 
-WORK IN PROGRESS:
-
-- [Doppelkopf](https://github.com/fwkrumm/doppelkopf)
+- [Doppelkopf](https://github.com/fwkrumm/doppelkopf) (AI GENERATED) (WORK IN PROGRESS)
 WIP. This repository contains an experimental AI project build for generating a Doppelkopf (traditional german card game) game with Godot4. This is not production‑ready and is only updated when I have spare compute tokens. You’re welcome to use, modify, or extend it in accordance with the project’s license.
