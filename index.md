@@ -36,7 +36,5 @@ A straightforward wrapper for the pcapplusplus library, designed to forward pcap
 
 ## GDScript
 
-WORK IN PROGRESS:
-
-- [Doppelkopf](https://github.com/fwkrumm/doppelkopf)
-WIP. This repository contains an experimental AI project build for generating a Doppelkopf (traditional german card game) game with Godot4. This is not production‑ready and is only updated when I have spare compute tokens. You’re welcome to use, modify, or extend it in accordance with the project’s license.
+- [Doppelkopf](https://github.com/fwkrumm/doppelkopf) (AI GENERATED, WORK IN PROGRESS)
+This repository contains an experimental AI project build for generating a Doppelkopf (traditional german card game) game with Godot4. This is not production‑ready and is only updated when I have spare compute tokens. You’re welcome to use, modify, or extend it in accordance with the project’s license.
