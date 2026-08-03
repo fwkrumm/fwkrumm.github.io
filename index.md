@@ -23,7 +23,7 @@ Your feedback is highly appreciated.
 
   A Python library (basically a simple C-wrapper) for memory barriers and synchronization primitives, providing efficient and portable solutions for concurrent programming.
 
-- [grpchook](https://github.com/fwkrumm/grpchook)
+- [pookiepy](https://github.com/fwkrumm/pookiepy)
 
   This package provides a Python framework for building asynchronous gRPC bidirectional-streaming services. Subclass `BaseServer` and `BaseClient`, override the hooks you need - the framework handles all gRPC plumbing.
 
