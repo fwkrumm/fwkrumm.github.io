@@ -1,6 +1,13 @@
 (() => {
   'use strict';
 
+  const dateLabel = document.querySelector('[data-current-date]');
+  if (dateLabel) {
+    const currentDate = new Date();
+    dateLabel.textContent = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: 'numeric' }).format(currentDate);
+    dateLabel.dateTime = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
+  }
+
   const forest = document.querySelector('[data-skill-forest]');
   if (!forest) return;
   const nodes = new Map(Array.from(forest.querySelectorAll('[data-node]'), node => [node.dataset.node, node]));

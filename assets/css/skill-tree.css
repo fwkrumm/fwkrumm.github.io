@@ -37,8 +37,8 @@ h1 { font: 500 32px 'Space Grotesk', sans-serif; margin: 0; }
 .connections path { fill: none; stroke: var(--branch); stroke-width: 1.5; opacity: .4; transition: opacity 180ms, stroke-width 180ms; }
 .connections path.is-active { opacity: .95; stroke-width: 2.5; }
 .node-position { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; width: 120px; }
-.skill-node { flex: none; display: grid; place-items: center; width: 60px; height: 60px; padding: 0; border: 1px solid color-mix(in srgb, var(--branch) 45%, var(--line)); border-radius: 50%; color: var(--branch); background: linear-gradient(145deg, #1b303d, #10202b); cursor: pointer; box-shadow: 0 6px 18px #0002; transition: background 180ms, border-color 180ms, transform 180ms; }
-.skill-node:hover, .skill-node[aria-expanded='true'], .skill-node[aria-pressed='true'] { border-color: var(--branch); background: color-mix(in srgb, var(--branch) 14%, #12242f); transform: translateY(-2px); }
+.skill-node { flex: none; display: grid; place-items: center; width: 60px; height: 60px; padding: 0; border: 1px solid color-mix(in srgb, var(--branch) 45%, var(--line)); border-radius: 50%; color: var(--branch); background-color: #10202b; background-image: linear-gradient(145deg, #1b303d, transparent); cursor: pointer; box-shadow: 0 6px 18px #0002; transition: background-color 180ms, border-color 180ms, transform 180ms; }
+.skill-node:hover, .skill-node[aria-expanded='true'], .skill-node[aria-pressed='true'] { border-color: var(--branch); background-color: color-mix(in srgb, var(--branch) 14%, #12242f); transform: translateY(-2px); }
 .skill-node svg { width: 23px; height: 23px; stroke-width: 1.6; }
 .root-node { width: 78px; height: 78px; border: 2px solid var(--branch); font: 600 23px 'Space Grotesk', sans-serif; }
 .node-label { margin-top: 8px; padding: 2px 4px; max-width: 132px; font: 500 12px/1.4 'Space Grotesk', sans-serif; text-align: center; overflow-wrap: anywhere; color: #d8e6ed; background: var(--bg); }
