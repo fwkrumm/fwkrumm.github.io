@@ -23,6 +23,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #e7f3f8; outline-offs
 .github-link { display: flex; align-items: center; gap: 8px; font-size: 13px; }
 .github-link svg { width: 18px; height: 18px; }
 .portfolio-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 38px 0 28px; }
+.feedback-note { margin: -14px 0 24px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 h1 { font: 500 32px 'Space Grotesk', sans-serif; margin: 0; }
 .portfolio-heading > span { color: var(--muted); font-size: 12px; }
 .skill-forest { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
