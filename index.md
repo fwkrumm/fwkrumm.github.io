@@ -82,7 +82,7 @@ edges:
   - { from: pymembar, to: shmlock }
   - { from: shmlock, to: shmqueue }
   - { from: cpp, to: 5p }
-  - { from: cpp, to: pymembar, label: C }
+  - { from: cpp, to: pymembar }
   - { from: gdscript, to: doppelkopf }
 ---
 

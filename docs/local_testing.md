@@ -33,7 +33,7 @@ Jekyll generates `_site`; do not edit it manually. If a running watcher misses n
 
 ## Tree Checks
 
-- Confirm three language roots (Python, C/C++, GDScript), eight projects, and ten connections. `pymembar` appears once between Python and C/C++, with violet and green halves and a green C-labelled connection from C/C++. `shmqueue` branches from `shmlock`, not directly from Python.
+- Confirm three language roots (Python, C/C++, GDScript), eight projects, and ten connections. `pymembar` appears once between Python and C/C++, with violet and green halves and a green connection from C/C++. `shmqueue` branches from `shmlock`, not directly from Python.
 - Hover or focus a project to reveal its description; move into the popup and verify its repository link remains reachable.
 - Click or tap to pin details, select another project, and dismiss with Escape, the close button, or an outside click. Escape and the close button return focus to the triggering node.
 - Check desktop and narrow mobile widths for circular nodes, readable labels, aligned connectors, and no horizontal overflow.
