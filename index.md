@@ -6,8 +6,8 @@ trees:
     name: Python
     symbol: Py
   - id: cpp
-    name: C++
-    symbol: C++
+    name: C/C++
+    symbol: C/C++
   - id: gdscript
     name: GDScript
     symbol: GD
@@ -29,6 +29,8 @@ projects:
   - id: pymembar
     name: pymembar
     tree: python
+    languages: Python / C
+    shared: true
     icon: cpu
     url: https://github.com/fwkrumm/pymembar
     description: >-
@@ -58,10 +60,11 @@ projects:
   - id: 5p
     name: 5p
     tree: cpp
+    languages: C++
     icon: network
     url: https://github.com/fwkrumm/5p
     description: >-
-      A straightforward wrapper for the pcapplusplus library, designed to forward pcap data from pcap(ng) files via UDP/TCP using Boost sockets. This repository employs the conan2 package manager for dependency management.
+      A C++ wrapper for the pcapplusplus library, designed to forward pcap data from pcap(ng) files via UDP/TCP using Boost sockets. This repository employs the conan2 package manager for dependency management.
   - id: doppelkopf
     name: Doppelkopf
     tree: gdscript
@@ -71,7 +74,7 @@ projects:
     description: >-
       This repository contains an experimental AI project build for generating a Doppelkopf (traditional german card game) game with Godot4. This is not production-ready and is only updated when I have spare compute tokens. You're welcome to use, modify, or extend it in accordance with the project's license.
 edges:
-  - { from: python, to: shmlock, via: left }
+  - { from: python, to: shmlock }
   - { from: python, to: pymembar }
   - { from: python, to: pookiepy }
   - { from: python, to: multi_scale_turing }
@@ -79,6 +82,7 @@ edges:
   - { from: pymembar, to: shmlock }
   - { from: shmlock, to: shmqueue }
   - { from: cpp, to: 5p }
+  - { from: cpp, to: pymembar, label: C }
   - { from: gdscript, to: doppelkopf }
 ---
 

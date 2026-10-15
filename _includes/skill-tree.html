@@ -1,31 +1,30 @@
 <div class="skill-forest" data-skill-forest>
+  <svg class="connections" aria-hidden="true">
+    {% for edge in page.edges %}
+    {% assign source_tree = edge.from %}
+    {% for project in page.projects %}{% if project.id == edge.from %}{% assign source_tree = project.tree %}{% endif %}{% endfor %}
+    <path class="edge-{{ source_tree }}" data-tree="{{ source_tree }}" data-from="{{ edge.from }}" data-to="{{ edge.to }}" data-via="{{ edge.via }}" />
+    {% if edge.label %}<text class="edge-label edge-{{ source_tree }}" data-edge-from="{{ edge.from }}" data-edge-to="{{ edge.to }}">{{ edge.label | escape }}</text>{% endif %}
+    {% endfor %}
+  </svg>
   {% for tree in page.trees %}
   <section class="skill-region {{ tree.id }}" aria-labelledby="heading-{{ tree.id }}" data-tree="{{ tree.id }}">
     <div class="region-heading"><h2 id="heading-{{ tree.id }}">{{ tree.name | escape }}</h2></div>
     <div class="tree-map">
-      <svg class="connections" aria-hidden="true">
-        {% for edge in page.edges %}
-        {% assign source_tree = edge.from %}
-        {% for project in page.projects %}{% if project.id == edge.from %}{% assign source_tree = project.tree %}{% endif %}{% endfor %}
-        {% if source_tree == tree.id %}
-        <path data-from="{{ edge.from }}" data-to="{{ edge.to }}" data-via="{{ edge.via }}" />
-        {% endif %}
-        {% endfor %}
-      </svg>
       <div class="node-position root-position" data-position="{{ tree.id }}">
         <button class="skill-node root-node" type="button" data-node="{{ tree.id }}" aria-label="{{ tree.name | escape }} projects" aria-pressed="false"><span>{{ tree.symbol | escape }}</span></button>
         <span class="node-label root-label">{{ tree.name | escape }}</span>
       </div>
       {% for project in page.projects %}{% if project.tree == tree.id %}
       <div class="node-position" data-position="{{ project.id }}">
-        <button class="skill-node project-node" type="button" data-node="{{ project.id }}" aria-label="{{ project.name | escape }}" aria-controls="details-{{ project.id }}" aria-expanded="false" aria-haspopup="dialog">
+        <button class="skill-node project-node{% if project.shared %} shared-node{% endif %}" type="button" data-node="{{ project.id }}" aria-label="{{ project.name | escape }}{% if project.languages %}, {{ project.languages | escape }}{% endif %}" aria-controls="details-{{ project.id }}" aria-expanded="false" aria-haspopup="dialog">
           <i data-lucide="{{ project.icon }}" aria-hidden="true"></i><span class="icon-fallback" aria-hidden="true">{{ project.name | slice: 0, 2 }}</span>
         </button>
         <span class="node-label">{{ project.name | escape }}</span>
         {% if project.status %}<span class="node-status">{% if project.id == 'doppelkopf' %}AI / WIP{% else %}AI{% endif %}</span>{% endif %}
         <div class="project-details" id="details-{{ project.id }}" role="dialog" aria-labelledby="title-{{ project.id }}" aria-describedby="summary-{{ project.id }}" hidden>
           <div class="details-heading"><h3 id="title-{{ project.id }}">{{ project.name | escape }}</h3><button class="close-details" type="button" aria-label="Close project details" title="Close project details"><i data-lucide="x" aria-hidden="true"></i><span class="icon-fallback" aria-hidden="true">X</span></button></div>
-          <span class="details-language">{{ tree.name | escape }}</span>
+          <span class="details-language">{{ project.languages | default: tree.name | escape }}</span>
           {% if project.status %}<span class="details-status">{{ project.status | escape }}</span>{% endif %}
           <p id="summary-{{ project.id }}">{{ project.description | escape }}</p>
           <a class="repository-link" href="{{ project.url | escape }}">View repository<i data-lucide="arrow-up-right" aria-hidden="true"></i></a>

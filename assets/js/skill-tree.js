@@ -22,7 +22,7 @@
   const highlight = node => {
     const tree = node?.closest('[data-tree]');
     paths.forEach(path => path.classList.toggle('is-active', Boolean(node && (
-      node.classList.contains('root-node') ? path.closest('[data-tree]') === tree :
+      node.classList.contains('root-node') ? path.dataset.tree === tree.dataset.tree :
         path.dataset.from === node.dataset.node || path.dataset.to === node.dataset.node
     ))));
   };
@@ -32,7 +32,7 @@
       const from = nodes.get(path.dataset.from);
       const to = nodes.get(path.dataset.to);
       if (!from || !to) return;
-      const map = path.closest('.tree-map').getBoundingClientRect();
+      const map = forest.getBoundingClientRect();
       const start = from.getBoundingClientRect();
       const end = to.getBoundingClientRect();
       const startX = start.left + start.width / 2 - map.left;
@@ -42,11 +42,17 @@
       if (path.dataset.via === 'left') {
         const gutter = 8;
         path.setAttribute('d', `M ${startX} ${startY} H ${gutter + 12} Q ${gutter} ${startY} ${gutter} ${startY + 12} V ${endY - 12} Q ${gutter} ${endY} ${gutter + 12} ${endY} H ${endX}`);
-      } else if (window.matchMedia('(max-width: 600px)').matches && path.dataset.from === 'python' &&
-          ['pymembar', 'pookiepy'].includes(path.dataset.to)) {
-        path.setAttribute('d', `M ${startX} ${startY} V ${endY - 60} Q ${startX} ${endY} ${endX} ${endY}`);
+      } else if (window.matchMedia('(max-width: 700px)').matches && path.dataset.from === 'python' && path.dataset.to === 'shmlock') {
+        path.setAttribute('d', `M ${startX} ${startY} H ${endX} V ${endY}`);
+      } else if (window.matchMedia('(max-width: 700px)').matches && ['pookiepy', 'multi_scale_turing'].includes(path.dataset.to)) {
+        path.setAttribute('d', `M ${startX} ${startY} H 8 V ${endY} H ${endX}`);
       } else {
         path.setAttribute('d', `M ${startX} ${startY} L ${endX} ${endY}`);
+      }
+      const label = forest.querySelector(`[data-edge-from="${path.dataset.from}"][data-edge-to="${path.dataset.to}"]`);
+      if (label) {
+        label.setAttribute('x', (startX + endX) / 2);
+        label.setAttribute('y', (startY + endY) / 2 - 12);
       }
     });
   };
