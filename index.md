@@ -65,6 +65,22 @@ projects:
     url: https://github.com/fwkrumm/5p
     description: >-
       A C++ wrapper for the pcapplusplus library, designed to forward pcap data from pcap(ng) files via UDP/TCP using Boost sockets. This repository employs the conan2 package manager for dependency management.
+  - id: simpytick
+    name: simpytick
+    tree: python
+    utility: Timing
+    icon: timer
+    url: https://github.com/fwkrumm/simpytick
+    description: >-
+      A reusable Python timer with drift-compensated periodic events, thread and process backends, and interruptible sleep.
+  - id: jacl4py
+    name: jacl4py
+    tree: python
+    utility: Logging
+    icon: logs
+    url: https://github.com/fwkrumm/jacl4py
+    description: >-
+      A custom Python logger with colored console output, rotating log files, and additional debug levels. A small building block for use across Python projects.
   - id: doppelkopf
     name: Doppelkopf
     tree: gdscript
