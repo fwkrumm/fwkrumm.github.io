@@ -12,7 +12,7 @@
     <div class="region-heading"><h2 id="heading-{{ tree.id }}">{{ tree.name | escape }}</h2></div>
     <div class="tree-map">
       {% assign utilities = page.projects | where: 'tree', tree.id | where_exp: 'project', 'project.utility' %}
-      {% if utilities.size > 0 %}<div class="utility-field" aria-hidden="true"><span>Tools</span></div>{% endif %}
+      {% if utilities.size > 0 %}<div class="utility-field" aria-hidden="true"><span>Utility Libs</span></div>{% endif %}
       <div class="node-position root-position" data-position="{{ tree.id }}">
         <button class="skill-node root-node" type="button" data-node="{{ tree.id }}" aria-label="{{ tree.name | escape }} projects" aria-pressed="false"><span>{{ tree.symbol | escape }}</span></button>
         <span class="node-label root-label">{{ tree.name | escape }}</span>
